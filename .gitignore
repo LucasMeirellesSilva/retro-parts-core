@@ -1,0 +1,42 @@
+# Binaries for .NET Core
+bin/
+obj/
+
+# Visual Studio generated files and folders
+*.sln.suo
+*.user
+*.vs/
+.vscode/
+
+# Build results of an application (e.g., publish)
+publish/
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+
+# NuGet packages
+packages/
+
+# Database migration scripts
+Migrations/
+
+# User-specific settings
+appsettings.Development.json
+appsettings.Local.json
+
+# Docker related files
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Other potentially sensitive information
+*.key
+*.pem
+*.crt
+*.cert
+
+# VSCode extensions and settings
+.vscode/extensions.json
+.vscode/settings.json
