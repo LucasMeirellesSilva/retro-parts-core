@@ -10,11 +10,7 @@ public class MarketplaceProductBrandConfiguration : IEntityTypeConfiguration<Mar
     {
         builder.ToTable("marketplace_product_brands");
 
-        builder.HasKey(x => new
-        {
-            x.ProductBrandId,
-            x.MarketplaceId
-        });
+        builder.HasKey(x => new { x.ProductBrandId, x.MarketplaceId });
 
         builder.Property(x => x.ExternalId)
             .HasMaxLength(255)

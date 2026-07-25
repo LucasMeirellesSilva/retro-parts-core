@@ -13,13 +13,10 @@ public class MotorcycleVersionConfiguration : IEntityTypeConfiguration<Motorcycl
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Name)
-            .HasMaxLength(255);
+            .HasMaxLength(55);
 
-        builder.HasIndex(x => new
-        {
-            x.Name,
-            x.ModelId
-        }).IsUnique();
+        builder.HasIndex(x => new { x.Name, x.ModelId })
+            .IsUnique();
 
         builder.HasOne(x => x.Model)
             .WithMany(x => x.Versions)

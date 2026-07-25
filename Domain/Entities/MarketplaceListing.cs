@@ -10,7 +10,7 @@ public sealed class MarketplaceListing
 
     public required string ExternalId { get; set; }
 
-    public decimal Price { get; set; }
+    public required decimal Price { get; set; }
 
     public int? InstallmentCount { get; set; }
 
@@ -18,7 +18,13 @@ public sealed class MarketplaceListing
 
     public decimal? InstallmentTotal { get; set; }
 
-    public Listing Listing { get; set; } = null!;
+    public required int MarketplaceFeePercent { get; set; }
 
-    public Marketplace Marketplace { get; set; } = null!;
+    public required decimal ShippingCost { get; set; }
+
+    public required DateTime LastSync { get; set; }
+
+    public required Listing Listing { get; set; }
+
+    public required Marketplace Marketplace { get; set; }
 }

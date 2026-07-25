@@ -8,7 +8,7 @@ public sealed class Measurement
 
     public int MeasurementTypeId { get; set; }
 
-    public MeasurementType MeasurementType { get; set; } = null!;
+    public required MeasurementType MeasurementType { get; set; }
 
     public ICollection<CategoryMeasurement> CategoryMeasurements { get; set; } = [];
 

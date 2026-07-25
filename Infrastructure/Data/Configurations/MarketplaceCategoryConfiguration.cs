@@ -13,7 +13,7 @@ public class MarketplaceCategoryConfiguration : IEntityTypeConfiguration<Marketp
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.ExternalId)
-            .HasMaxLength(255)
+            .HasMaxLength(55)
             .IsRequired();
 
         builder.Property(x => x.Name)

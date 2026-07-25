@@ -10,17 +10,15 @@ public class CategoryMappingConfiguration : IEntityTypeConfiguration<CategoryMap
     {
         builder.ToTable("category_mapping");
 
-        builder.HasKey(x => new
-        {
-            x.CategoryId,
-            x.MarketplaceCategoryId
-        });
+        builder.HasKey(x => new { x.CategoryId, x.MarketplaceCategoryId });
 
-        builder.HasOne(x => x.Category)
+        builder
+            .HasOne(x => x.Category)
             .WithMany(x => x.CategoryMappings)
             .HasForeignKey(x => x.CategoryId);
 
-        builder.HasOne(x => x.MarketplaceCategory)
+        builder
+            .HasOne(x => x.MarketplaceCategory)
             .WithMany(x => x.CategoryMappings)
             .HasForeignKey(x => x.MarketplaceCategoryId);
     }

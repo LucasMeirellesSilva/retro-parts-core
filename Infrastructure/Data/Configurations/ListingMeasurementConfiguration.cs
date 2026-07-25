@@ -10,17 +10,15 @@ public class ListingMeasurementConfiguration : IEntityTypeConfiguration<ListingM
     {
         builder.ToTable("listings_measurements");
 
-        builder.HasKey(x => new
-        {
-            x.ListingId,
-            x.MeasurementId
-        });
+        builder.HasKey(x => new { x.ListingId, x.MeasurementId });
 
-        builder.HasOne(x => x.Listing)
+        builder
+            .HasOne(x => x.Listing)
             .WithMany(x => x.ListingMeasurements)
             .HasForeignKey(x => x.ListingId);
 
-        builder.HasOne(x => x.Measurement)
+        builder
+            .HasOne(x => x.Measurement)
             .WithMany(x => x.ListingMeasurements)
             .HasForeignKey(x => x.MeasurementId);
     }

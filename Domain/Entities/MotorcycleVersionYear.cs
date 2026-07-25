@@ -8,7 +8,7 @@ public sealed class MotorcycleVersionYear
 
     public int VersionId { get; set; }
 
-    public MotorcycleVersion Version { get; set; } = null!;
+    public required MotorcycleVersion Version { get; set; }
 
     public ICollection<ListingCompatibility> ListingCompatibilities { get; set; } = [];
 }

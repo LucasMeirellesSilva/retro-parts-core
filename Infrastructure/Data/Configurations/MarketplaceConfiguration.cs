@@ -12,11 +12,7 @@ public class MarketplaceConfiguration : IEntityTypeConfiguration<Marketplace>
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Name)
-            .HasMaxLength(255)
-            .IsRequired();
-
-        builder.Property(x => x.DefaultQueryUrl)
-            .HasMaxLength(500)
+            .HasMaxLength(55)
             .IsRequired();
     }
 }

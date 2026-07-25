@@ -13,11 +13,11 @@ public class ProductBrandConfiguration : IEntityTypeConfiguration<ProductBrand>
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Name)
-            .HasMaxLength(255)
+            .HasMaxLength(55)
             .IsRequired();
 
         builder.Property(x => x.Slug)
-            .HasMaxLength(255)
+            .HasMaxLength(55)
             .IsRequired();
 
         builder.HasIndex(x => x.Name)

@@ -6,7 +6,7 @@ public sealed class ListingMeasurement
 
     public int MeasurementId { get; set; }
 
-    public Listing Listing { get; set; } = null!;
+    public required Listing Listing { get; set; }
 
-    public Measurement Measurement { get; set; } = null!;
+    public required Measurement Measurement { get; set; }
 }

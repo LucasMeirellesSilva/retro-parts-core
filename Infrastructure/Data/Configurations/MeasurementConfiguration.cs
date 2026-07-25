@@ -16,11 +16,8 @@ public class MeasurementConfiguration : IEntityTypeConfiguration<Measurement>
             .HasColumnType("decimal(5,2)")
             .IsRequired();
 
-        builder.HasIndex(x => new
-        {
-            x.Size,
-            x.MeasurementTypeId
-        }).IsUnique();
+        builder.HasIndex(x => new { x.Size, x.MeasurementTypeId })
+            .IsUnique();
 
         builder.HasOne(x => x.MeasurementType)
             .WithMany(x => x.Measurements)

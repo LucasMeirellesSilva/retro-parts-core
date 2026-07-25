@@ -13,11 +13,11 @@ public class MotorcycleBrandConfiguration : IEntityTypeConfiguration<MotorcycleB
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Name)
-            .HasMaxLength(255)
+            .HasMaxLength(55)
             .IsRequired();
 
         builder.Property(x => x.Slug)
-            .HasMaxLength(255)
+            .HasMaxLength(55)
             .IsRequired();
     }
 }

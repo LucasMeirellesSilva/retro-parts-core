@@ -19,11 +19,8 @@ public class ListingImageConfiguration : IEntityTypeConfiguration<ListingImage>
         builder.Property(x => x.Position)
             .IsRequired();
 
-        builder.HasIndex(x => new
-        {
-            x.ListingId,
-            x.Position
-        }).IsUnique();
+        builder.HasIndex(x => new { x.ListingId, x.Position})
+            .IsUnique();
 
         builder.HasOne(x => x.Listing)
             .WithMany(x => x.ListingImages)

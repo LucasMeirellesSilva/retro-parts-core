@@ -10,5 +10,5 @@ public sealed class ListingImage
 
     public int Position { get; set; }
 
-    public Listing Listing { get; set; } = null!;
+    public required Listing Listing { get; set; }
 }

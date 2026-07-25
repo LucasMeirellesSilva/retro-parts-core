@@ -6,8 +6,6 @@ public sealed class Marketplace
 
     public required string Name { get; set; }
 
-    public required string DefaultQueryUrl { get; set; }
-
     public ICollection<MarketplaceCategory> Categories { get; set; } = [];
 
     public ICollection<MarketplaceListing> Listings { get; set; } = [];

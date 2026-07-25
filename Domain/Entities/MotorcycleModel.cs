@@ -8,7 +8,7 @@ public sealed class MotorcycleModel
 
     public int BrandId { get; set; }
 
-    public MotorcycleBrand Brand { get; set; } = null!;
+    public required MotorcycleBrand Brand { get; set; }
 
     public ICollection<MotorcycleVersion> Versions { get; set; } = [];
 }

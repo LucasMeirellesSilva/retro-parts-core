@@ -18,6 +18,10 @@ public class ListingConfiguration : IEntityTypeConfiguration<Listing>
         builder.Property(x => x.Description);
 
         builder.Property(x => x.OemCode);
+            .HasMaxLength(32)
+
+        builder.Property(x => x.NormalizedOemCode);
+            .HasMaxLength(32)
 
         builder.Property(x => x.Active)
             .IsRequired();
@@ -30,6 +34,8 @@ public class ListingConfiguration : IEntityTypeConfiguration<Listing>
 
         builder.Property(x => x.Used)
             .IsRequired();
+        
+        builder.Property(x => x.DeletedAt);
 
         builder.Property(x => x.CreatedAt)
             .HasDefaultValueSql("CURRENT_TIMESTAMP");

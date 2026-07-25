@@ -12,7 +12,7 @@ public sealed class MarketplaceCategory
 
     public required string Name { get; set; }
 
-    public Marketplace Marketplace { get; set; } = null!;
+    public required Marketplace Marketplace { get; set; }
 
     public MarketplaceCategory? Parent { get; set; }
 

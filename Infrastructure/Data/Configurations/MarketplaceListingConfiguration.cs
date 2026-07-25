@@ -10,11 +10,7 @@ public class MarketplaceListingConfiguration : IEntityTypeConfiguration<Marketpl
     {
         builder.ToTable("marketplace_listings");
 
-        builder.HasKey(x => new
-        {
-            x.ListingId,
-            x.MarketplaceId
-        });
+        builder.HasKey(x => new { x.ListingId, x.MarketplaceId });
 
         builder.Property(x => x.Url)
             .HasMaxLength(500)
@@ -33,11 +29,8 @@ public class MarketplaceListingConfiguration : IEntityTypeConfiguration<Marketpl
         builder.Property(x => x.InstallmentTotal)
             .HasColumnType("decimal(10,2)");
 
-        builder.HasIndex(x => new
-        {
-            x.ExternalId,
-            x.MarketplaceId
-        }).IsUnique();
+        builder.HasIndex(x => new { x.ExternalId, x.MarketplaceId })
+            .IsUnique();
 
         builder.HasOne(x => x.Listing)
             .WithMany(x => x.MarketplaceListings)

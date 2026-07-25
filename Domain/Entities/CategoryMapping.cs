@@ -6,7 +6,7 @@ public sealed class CategoryMapping
 
     public int MarketplaceCategoryId { get; set; }
 
-    public Category Category { get; set; } = null!;
+    public required Category Category { get; set; }
 
-    public MarketplaceCategory MarketplaceCategory { get; set; } = null!;
+    public required MarketplaceCategory MarketplaceCategory { get; set; }
 }

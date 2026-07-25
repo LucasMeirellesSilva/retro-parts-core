@@ -12,13 +12,15 @@ public sealed class Listing
 
     public bool Active { get; set; }
 
-    public int AvailableStock { get; set; }
+    public required int AvailableStock { get; set; }
 
     public string? Description { get; set; }
 
     public string? OemCode { get; set; }
 
-    public bool Genuine { get; set; }
+    public string? NormalizedOemCode { get; set; }
+
+    public required bool Genuine { get; set; }
 
     public bool Used { get; set; }
 
@@ -28,11 +30,9 @@ public sealed class Listing
 
     public DateTime UpdatedAt { get; set; }
 
-    public DateTime? LastSync { get; set; }
+    public required ProductBrand ProductBrand { get; set; }
 
-    public ProductBrand ProductBrand { get; set; } = null!;
-
-    public Category Category { get; set; } = null!;
+    public required Category Category { get; set; }
 
     public ICollection<ListingImage> ListingImages { get; set; } = [];
 

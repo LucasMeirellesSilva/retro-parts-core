@@ -8,7 +8,7 @@ public sealed class MarketplaceProductBrand
 
     public required string ExternalId { get; set; }
 
-    public ProductBrand ProductBrand { get; set; } = null!;
+    public required ProductBrand ProductBrand { get; set; }
 
-    public Marketplace Marketplace { get; set; } = null!;
+    public required Marketplace Marketplace { get; set; }
 }

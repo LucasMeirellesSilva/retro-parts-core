@@ -8,7 +8,7 @@ public sealed class MotorcycleVersion
 
     public int ModelId { get; set; }
 
-    public MotorcycleModel Model { get; set; } = null!;
+    public required MotorcycleModel Model { get; set; }
 
     public ICollection<MotorcycleVersionYear> Years { get; set; } = [];
 }

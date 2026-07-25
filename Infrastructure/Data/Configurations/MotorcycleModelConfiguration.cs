@@ -13,14 +13,11 @@ public class MotorcycleModelConfiguration : IEntityTypeConfiguration<MotorcycleM
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Name)
-            .HasMaxLength(255)
+            .HasMaxLength(55)
             .IsRequired();
 
-        builder.HasIndex(x => new
-        {
-            x.Name,
-            x.BrandId
-        }).IsUnique();
+        builder.HasIndex(x => new { x.Name, x.BrandId })
+            .IsUnique();
 
         builder.HasOne(x => x.Brand)
             .WithMany(x => x.Models)

@@ -10,17 +10,15 @@ public class CategoryMeasurementConfiguration : IEntityTypeConfiguration<Categor
     {
         builder.ToTable("category_measurements");
 
-        builder.HasKey(x => new
-        {
-            x.CategoryId,
-            x.MeasurementId
-        });
+        builder.HasKey(x => new { x.CategoryId, x.MeasurementId });
 
-        builder.HasOne(x => x.Category)
+        builder
+            .HasOne(x => x.Category)
             .WithMany(x => x.CategoryMeasurements)
             .HasForeignKey(x => x.CategoryId);
 
-        builder.HasOne(x => x.Measurement)
+        builder
+            .HasOne(x => x.Measurement)
             .WithMany(x => x.CategoryMeasurements)
             .HasForeignKey(x => x.MeasurementId);
     }
