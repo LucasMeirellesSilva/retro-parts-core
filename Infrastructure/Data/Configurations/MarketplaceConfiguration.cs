@@ -14,5 +14,8 @@ public class MarketplaceConfiguration : IEntityTypeConfiguration<Marketplace>
         builder.Property(x => x.Name)
             .HasMaxLength(55)
             .IsRequired();
+
+        builder.HasIndex(x => x.Name)
+            .IsUnique();
     }
 }

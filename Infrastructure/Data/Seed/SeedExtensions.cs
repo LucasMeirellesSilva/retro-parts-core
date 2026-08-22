@@ -9,5 +9,9 @@ public static class SeedExtensions
         await MarketplaceSeed.SeedAsync(context);
         await ProductBrandSeed.SeedAsync(context);
         await MeasurementTypeSeed.SeedAsync(context);
+        await MeasurementSeed.SeedAsync(context);
+        await MotorcycleBrandSeed.SeedAsync(context);
+        await MotorcycleModelSeed.SeedAsync(context);
+        await MotorcycleVersionSeed.SeedAsync(context);
     }
 }

@@ -28,6 +28,7 @@ public static class ProductBrandSeed {
                 new ProductBrand { Name = "Guide Win", Slug = SlugGenerator.Generate("Guide Win") },
                 new ProductBrand { Name = "Auco", Slug = SlugGenerator.Generate("Auco") },
                 new ProductBrand { Name = "Metagal", Slug = SlugGenerator.Generate("Metagal") },
+                new ProductBrand { Name = "WW3", Slug = SlugGenerator.Generate("WW3") },
             );
 
             await context.SaveChangesAsync();

@@ -14,6 +14,9 @@ public class MotorcycleVersionYearConfiguration : IEntityTypeConfiguration<Motor
 
         builder.Property(x => x.Year)
             .IsRequired();
+        
+        builder.HasIndex(x => new { x.Year, x.VersionId})
+            .IsUnique();
 
         builder.HasOne(x => x.Version)
             .WithMany(x => x.Years)

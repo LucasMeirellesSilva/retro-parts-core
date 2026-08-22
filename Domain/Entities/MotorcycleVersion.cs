@@ -6,6 +6,8 @@ public sealed class MotorcycleVersion
 
     public string? Name { get; set; }
 
+    public string? Alias { get; set; }
+
     public int ModelId { get; set; }
 
     public required MotorcycleModel Model { get; set; }

@@ -15,9 +15,15 @@ public class MotorcycleBrandConfiguration : IEntityTypeConfiguration<MotorcycleB
         builder.Property(x => x.Name)
             .HasMaxLength(55)
             .IsRequired();
+        
+        builder.HasIndex(x => x.Name)
+            .IsUnique();
 
         builder.Property(x => x.Slug)
             .HasMaxLength(55)
             .IsRequired();
+
+        builder.HasIndex(x => x.Slug)
+            .IsUnique();
     }
 }

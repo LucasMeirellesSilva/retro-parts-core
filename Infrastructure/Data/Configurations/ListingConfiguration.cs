@@ -50,5 +50,12 @@ public class ListingConfiguration : IEntityTypeConfiguration<Listing>
         builder.HasOne(x => x.ProductBrand)
             .WithMany(x => x.Listings)
             .HasForeignKey(x => x.ProductBrandId);
+
+        builder.HasIndex(x => x.CategoryId);
+
+        builder.HasIndex(x => x.ProductBrandId);
+
+        builder.HasIndex(x => new { x.CategoryId, x.ProductBrandId })
+            .HasFilter("\"active\" = TRUE");
     }
 }

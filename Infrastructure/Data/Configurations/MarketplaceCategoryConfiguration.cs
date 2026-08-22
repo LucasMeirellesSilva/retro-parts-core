@@ -20,6 +20,9 @@ public class MarketplaceCategoryConfiguration : IEntityTypeConfiguration<Marketp
             .HasMaxLength(255)
             .IsRequired();
 
+        builder.HasIndex(x => new { x.Name, x.MarketplaceId})
+            .IsUnique();
+
         builder.HasOne(x => x.Parent)
             .WithMany(x => x.Children)
             .HasForeignKey(x => x.ParentId)

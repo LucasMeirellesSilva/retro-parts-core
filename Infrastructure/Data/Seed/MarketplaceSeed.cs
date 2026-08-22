@@ -4,8 +4,8 @@ public static class MarketplaceSeed {
         if (!context.Marketplace.Any())
         {
             context.Marketplace.AddRange(
-                new Marketplace { Name = "Mercado Livre", DefaultQueryUrl = "lista.mercadolivre.com.br/" },
-                new Marketplace { Name = "Shopee", DefaultQueryUrl = "shopee.com.br/search" }
+                new Marketplace { Name = "Mercado Livre" },
+                new Marketplace { Name = "Shopee" }
             );
 
             await context.SaveChangesAsync();

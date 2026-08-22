@@ -16,11 +16,14 @@ public class ProductBrandConfiguration : IEntityTypeConfiguration<ProductBrand>
             .HasMaxLength(55)
             .IsRequired();
 
+        builder.HasIndex(x => x.Name)
+            .IsUnique();
+
         builder.Property(x => x.Slug)
             .HasMaxLength(55)
             .IsRequired();
 
-        builder.HasIndex(x => x.Name)
+        builder.HasIndex(x => x.Slug)
             .IsUnique();
     }
 }

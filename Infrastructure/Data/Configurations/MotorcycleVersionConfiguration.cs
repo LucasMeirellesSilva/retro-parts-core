@@ -14,6 +14,9 @@ public class MotorcycleVersionConfiguration : IEntityTypeConfiguration<Motorcycl
 
         builder.Property(x => x.Name)
             .HasMaxLength(55);
+            
+        builder.Property(x => x.Alias)
+            .HasMaxLength(55);
 
         builder.HasIndex(x => new { x.Name, x.ModelId })
             .IsUnique();
