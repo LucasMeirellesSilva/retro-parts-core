@@ -10,6 +10,6 @@ public class ListingMotorcycleGroupConfiguration : IEntityTypeConfiguration<List
     {
         builder.ToTable("listing_motorcycle_group");
 
-        builder.HasKey(e => new { e.ListingId, e.MotorcycleGroupId });
+        builder.HasKey(x => new { x.ListingId, x.MotorcycleGroupId });
     }
 }

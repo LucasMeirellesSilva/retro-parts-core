@@ -10,6 +10,6 @@ public class MotorcycleGroupMappingConfiguration : IEntityTypeConfiguration<Moto
     {
         builder.ToTable("motorcycle_group_mapping");
 
-        builder.HasKey(e => new { e.MotorcycleYearId, e.MotorcycleGroupId });
+        builder.HasKey(x => new { x.MotorcycleYearId, x.MotorcycleGroupId });
     }
 }

@@ -10,6 +10,6 @@ public class CategoryGroupCompatibilityConfiguration : IEntityTypeConfiguration<
     {
         builder.ToTable("category_group_compatibility");
 
-        builder.HasKey(e => new { e.MotorcycleGroupId, e.CategoryId });
+        builder.HasKey(x => new { x.MotorcycleGroupId, x.CategoryId });
     }
 }

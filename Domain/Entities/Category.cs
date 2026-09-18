@@ -16,7 +16,7 @@ public sealed class Category
 
     public ICollection<Listing> Listings { get; set; } = [];
 
-    public ICollection<CategoryMapping> CategoryMappings { get; set; } = [];
+    public ICollection<CategoryAttribute> CategoryAttributes { get; set; } = [];
 
-    public ICollection<CategoryMeasurement> CategoryMeasurements { get; set; } = [];
+    public ICollection<CategoryMapping> CategoryMappings { get; set; } = [];
 }

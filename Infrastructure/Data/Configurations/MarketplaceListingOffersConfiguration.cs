@@ -9,23 +9,23 @@ public class MarketplaceListingOfferConfiguration : IEntityTypeConfiguration<Mar
     {
         builder.ToTable("marketplace_listing_offers");
 
-        builder.HasKey(e => e.Id);
+        builder.HasKey(x => x.Id);
 
-        builder.Property(e => e.MarketplaceListingId)
+        builder.Property(x => x.MarketplaceListingId)
             .IsRequired();
 
-        builder.Property(e => e.OriginalPrice)
+        builder.Property(x => x.OriginalPrice)
             .HasColumnType("decimal(10,2)");
             .IsRequired();
 
-        builder.Property(e => e.OfferPrice)
+        builder.Property(x => x.OfferPrice)
             .HasColumnType("decimal(10,2)");
             .IsRequired();
 
-        builder.Property(e => e.StartsAt)
+        builder.Property(x => x.StartsAt)
             .IsRequired();
 
-        builder.Property(e => e.EndsAt)
+        builder.Property(x => x.EndsAt)
             .IsRequired();
     }
 }

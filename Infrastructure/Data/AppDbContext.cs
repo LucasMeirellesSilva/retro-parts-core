@@ -10,6 +10,32 @@ public class AppDbContext : DbContext
     {
     }
 
+    public DbSet<Category> Categories => Set<Category>();
+    public DbSet<CategoryAttribute> CategoryAttributes => Set<CategoryAttribute>();
+    public DbSet<CategoryAttributeOption> CategoryAttributeOptions => Set<CategoryAttributeOption>();
+    public DbSet<CategoryAttributeType> CategoryAttributeTypes => Set<CategoryAttributeType>();
+    public DbSet<CategoryMapping> CategoryMappings => Set<CategoryMapping>();
+
+    public DbSet<Listing> Listings => Set<Listing>();
+    public DbSet<ListingImage> ListingImages => Set<ListingImage>();
+    public DbSet<ListingMotorcycleGroup> ListingMotorcycleGroups => Set<ListingMotorcycleGroup>();
+
+    public DbSet<Marketplace> Marketplaces => Set<Marketplace>();
+    public DbSet<MarketplaceCategory> MarketplaceCategories => Set<MarketplaceCategory>();
+    public DbSet<MarketplaceListing> MarketplaceListings => Set<MarketplaceListing>();
+    public DbSet<MarketplaceListingOffer> MarketplaceListingOffers => Set<MarketplaceListingOffer>();
+    public DbSet<MarketplaceProductBrand> MarketplaceProductBrands => Set<MarketplaceProductBrand>();
+
+    public DbSet<MotorcycleBrand> MotorcycleBrands => Set<MotorcycleBrand>();
+    public DbSet<MotorcycleGroup> MotorcycleGroups => Set<MotorcycleGroup>();
+    public DbSet<MotorcycleGroupCompatibility> MotorcycleGroupCompatibilities => Set<MotorcycleGroupCompatibility>();
+    public DbSet<MotorcycleGroupMapping> MotorcycleGroupMappings => Set<MotorcycleGroupMapping>();
+    public DbSet<MotorcycleModel> MotorcycleModels => Set<MotorcycleModel>();
+    public DbSet<MotorcycleVersion> MotorcycleVersions => Set<MotorcycleVersion>();
+    public DbSet<MotorcycleVersionYear> MotorcycleVersionYears => Set<MotorcycleVersionYear>();
+
+    public DbSet<ProductBrand> ProductBrands => Set<ProductBrand>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -19,14 +45,7 @@ public class AppDbContext : DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(
             typeof(AppDbContext).Assembly
         );
+
+        modelBuilder.ConfigureSeedData();
     }
-
-
-    public DbSet<Listing> Listings => Set<Listing>();
-    public DbSet<ListingLink> ListingLinks => Set<ListingLink>();
-    public DbSet<Category> Categories => Set<Category>();
-    public DbSet<Brand> Brands => Set<Brand>();
-    public DbSet<CategoryBrand> CategoryBrands => Set<CategoryBrand>();
-    public DbSet<Picture> Pictures => Set<Picture>();
-    public DbSet<Motorcycle> Motorcycles => Set<Motorcycle>();
 }

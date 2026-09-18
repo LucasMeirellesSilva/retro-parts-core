@@ -24,6 +24,8 @@ public sealed class Listing
 
     public bool Used { get; set; }
 
+    public JsonDocument Attributes { get; private set; }
+
     public DateTime? DeletedAt { get; set; }
 
     public DateTime CreatedAt { get; set; }
@@ -39,6 +41,4 @@ public sealed class Listing
     public ICollection<MarketplaceListing> MarketplaceListings { get; set; } = [];
 
     public ICollection<ListingCompatibility> ListingCompatibilities { get; set; } = [];
-
-    public ICollection<ListingMeasurement> ListingMeasurements { get; set; } = [];
 }

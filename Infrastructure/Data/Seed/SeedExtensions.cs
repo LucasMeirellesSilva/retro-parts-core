@@ -1,17 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+
 public static class SeedExtensions
 {
-    public static async Task SeedDatabaseAsync(this IServiceProvider services)
+    public static void ConfigureSeedData(this ModelBuilder modelBuilder)
     {
-        using var scope = services.CreateScope();
-
-        var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-
-        await MarketplaceSeed.SeedAsync(context);
-        await ProductBrandSeed.SeedAsync(context);
-        await MeasurementTypeSeed.SeedAsync(context);
-        await MeasurementSeed.SeedAsync(context);
-        await MotorcycleBrandSeed.SeedAsync(context);
-        await MotorcycleModelSeed.SeedAsync(context);
-        await MotorcycleVersionSeed.SeedAsync(context);
+        MarketplaceSeed.Configure(modelBuilder);
+        ProductBrandSeed.Configure(modelBuilder);
+        MotorcycleBrandSeed.Configure(modelBuilder);
+        MotorcycleModelSeed.Configure(modelBuilder);
+        MotorcycleVersionSeed.Configure(modelBuilder);
+        CategorySeed.Configure(modelBuilder);
+        MarketplaceProductBrandSeed.Configure(modelBuilder);
     }
 }

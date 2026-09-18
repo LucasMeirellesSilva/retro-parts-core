@@ -1,154 +1,123 @@
+using Microsoft.EntityFrameworkCore;
+
 public static class MotorcycleVersionSeed
 {
-    public static async Task SeedAsync(AppDbContext context)
+    public static void Configure(ModelBuilder modelBuilder)
     {
-        if (await context.MotorcycleVersion.AnyAsync())
-            return;
+        modelBuilder.Entity<MotorcycleVersion>().HasData(
+            new MotorcycleVersion { Id = 1, Alias = "CG Bolinha", ModelId = 1 },
+            new MotorcycleVersion { Id = 2, ModelId = 1 },
+            new MotorcycleVersion { Id = 3, Name = "Cargo", ModelId = 1 },
+            new MotorcycleVersion { Id = 4, Name = "Titan", ModelId = 1 },
+            new MotorcycleVersion { Id = 5, Name = "Titan KS", ModelId = 1 },
+            new MotorcycleVersion { Id = 6, Name = "Titan KSE", ModelId = 1 },
+            new MotorcycleVersion { Id = 7, Name = "Titan ES", ModelId = 1 },
+            new MotorcycleVersion { Id = 8, Name = "Fan", ModelId = 1 },
+            new MotorcycleVersion { Id = 9, Name = "Fan KS", ModelId = 1 },
+            new MotorcycleVersion { Id = 10, Name = "Fan ES", ModelId = 1 },
+            new MotorcycleVersion { Id = 11, Name = "Fan ESD", ModelId = 1 },
 
-        var cg125Id = await context.MotorcycleModel.Where(x => x.Name == "CG 125").Select(x => x.Id).SingleAsync();
-        var ml125Id = await context.MotorcycleModel.Where(x => x.Name == "ML 125").Select(x => x.Id).SingleAsync();
-        var turuna125Id = await context.MotorcycleModel.Where(x => x.Name == "Turuna 125").Select(x => x.Id).SingleAsync();
-        var cb400Id = await context.MotorcycleModel.Where(x => x.Name == "CB 400").Select(x => x.Id).SingleAsync();
-        var xl250Id = await context.MotorcycleModel.Where(x => x.Name == "XL 250").Select(x => x.Id).SingleAsync();
-        var xl125Id = await context.MotorcycleModel.Where(x => x.Name == "XL 125").Select(x => x.Id).SingleAsync();
-        var cb450Id = await context.MotorcycleModel.Where(x => x.Name == "CB 450").Select(x => x.Id).SingleAsync();
-        var xlx250Id = await context.MotorcycleModel.Where(x => x.Name == "XLX 250").Select(x => x.Id).SingleAsync();
-        var xlx350Id = await context.MotorcycleModel.Where(x => x.Name == "XLX 350").Select(x => x.Id).SingleAsync();
-        var today125Id = await context.MotorcycleModel.Where(x => x.Name == "Today 125").Select(x => x.Id).SingleAsync();
-        var nx150Id = await context.MotorcycleModel.Where(x => x.Name == "NX 150").Select(x => x.Id).SingleAsync();
-        var cbx150Id = await context.MotorcycleModel.Where(x => x.Name == "CBX 150").Select(x => x.Id).SingleAsync();
-        var nx350Id = await context.MotorcycleModel.Where(x => x.Name == "NX 350").Select(x => x.Id).SingleAsync();
-        var c100Id = await context.MotorcycleModel.Where(x => x.Name == "C100").Select(x => x.Id).SingleAsync();
-        var cbx200Id = await context.MotorcycleModel.Where(x => x.Name == "CBX 200").Select(x => x.Id).SingleAsync();
-        var xr200Id = await context.MotorcycleModel.Where(x => x.Name == "XR 200").Select(x => x.Id).SingleAsync();
-        var xlr125Id = await context.MotorcycleModel.Where(x => x.Name == "XLR 125").Select(x => x.Id).SingleAsync();
-        var cb500Id = await context.MotorcycleModel.Where(x => x.Name == "CB 500").Select(x => x.Id).SingleAsync();
-        var nx400Id = await context.MotorcycleModel.Where(x => x.Name == "NX 400").Select(x => x.Id).SingleAsync();
-        var cbx250Id = await context.MotorcycleModel.Where(x => x.Name == "CBX 250").Select(x => x.Id).SingleAsync();
-        var xr250Id = await context.MotorcycleModel.Where(x => x.Name == "XR 250").Select(x => x.Id).SingleAsync();
-        var nxr125Id = await context.MotorcycleModel.Where(x => x.Name == "NXR 125").Select(x => x.Id).SingleAsync();
-        var nxr150Id = await context.MotorcycleModel.Where(x => x.Name == "NXR 150").Select(x => x.Id).SingleAsync();
-        var cg150Id = await context.MotorcycleModel.Where(x => x.Name == "CG 150").Select(x => x.Id).SingleAsync();
-        var biz125Id = await context.MotorcycleModel.Where(x => x.Name == "Biz 125").Select(x => x.Id).SingleAsync();
-        var biz100Id = await context.MotorcycleModel.Where(x => x.Name == "Biz 100").Select(x => x.Id).SingleAsync();
-        var pop100Id = await context.MotorcycleModel.Where(x => x.Name == "Pop 100").Select(x => x.Id).SingleAsync();
+            new MotorcycleVersion { Id = 12, ModelId = 2 },
 
-        context.MotorcycleVersion.AddRange(
+            new MotorcycleVersion { Id = 13, ModelId = 3 },
 
-            // CG 125
-            new MotorcycleVersion { Alias = "CG Bolinha", ModelId = cg125Id },
-            new MotorcycleVersion { ModelId = cg125Id },
-            new MotorcycleVersion { Name = "Cargo", ModelId = cg125Id },
-            new MotorcycleVersion { Name = "Titan", ModelId = cg125Id },
-            new MotorcycleVersion { Name = "Titan KS", ModelId = cg125Id },
-            new MotorcycleVersion { Name = "Titan KSE", ModelId = cg125Id },
-            new MotorcycleVersion { Name = "Titan ES", ModelId = cg125Id },
-            new MotorcycleVersion { Name = "Fan", ModelId = cg125Id },
-            new MotorcycleVersion { Name = "Fan KS", ModelId = cg125Id },
-            new MotorcycleVersion { Name = "Fan ES", ModelId = cg125Id },
-            new MotorcycleVersion { Name = "Fan ESD", ModelId = cg125Id },
+            new MotorcycleVersion { Id = 14, ModelId = 4 },
+            new MotorcycleVersion { Id = 15, Name = "II", ModelId = 4 },
 
-            // ML 125
-            new MotorcycleVersion { ModelId = ml125Id },
+            new MotorcycleVersion { Id = 16, Alias = "XLR 250", ModelId = 5 },
+            
+            new MotorcycleVersion { Id = 17, ModelId = 6 },
+            new MotorcycleVersion { Id = 18, Name = "Custom", ModelId = 6 },
+            new MotorcycleVersion { Id = 19, Name = "DX", ModelId = 6 },
+            new MotorcycleVersion { Id = 20, Name = "Esporte", ModelId = 6 },
+            new MotorcycleVersion { Id = 21, Name = "TR", ModelId = 6 },
 
-            // Turuna 125
-            new MotorcycleVersion { ModelId = turuna125Id },
+            new MotorcycleVersion { Id = 22, Alias = "XL 125S", ModelId = 7 },
+            new MotorcycleVersion { Id = 23, Name = "Duty", ModelId = 7 },
 
-            // CB 400
-            new MotorcycleVersion { ModelId = cb400Id },
-            new MotorcycleVersion { Name = "II", ModelId = cb400Id },
+            new MotorcycleVersion { Id = 24, ModelId = 8 },
 
-            // XL 250
-            new MotorcycleVersion { Alias = "XLR 250", ModelId = xl250Id },
+            new MotorcycleVersion { Id = 25, ModelId = 9 },
 
-            // CB 450
-            new MotorcycleVersion { ModelId = cb450Id },
-            new MotorcycleVersion { Name = "Custom", ModelId = cb450Id },
-            new MotorcycleVersion { Name = "DX", ModelId = cb450Id },
-            new MotorcycleVersion { Name = "Esporte", ModelId = cb450Id },
-            new MotorcycleVersion { Name = "TR", ModelId = cb450Id },
+            new MotorcycleVersion { Id = 26, ModelId = 10 },
 
-            // XL 125
-            new MotorcycleVersion { Alias = "XL 125S", ModelId = xl125Id },
-            new MotorcycleVersion { Name = "Duty", ModelId = xl125Id },
+            new MotorcycleVersion { Id = 27, ModelId = 11 },
 
-            // XLX 250
-            new MotorcycleVersion { ModelId = xlx250Id },
+            new MotorcycleVersion { Id = 28, Alias = "Aero", ModelId = 12 },
 
-            // XLX 350
-            new MotorcycleVersion { ModelId = xlx350Id },
+            new MotorcycleVersion { Id = 29, Alias = "Sahara", ModelId = 13 },
 
-            // Today 125
-            new MotorcycleVersion { ModelId = today125Id },
+            new MotorcycleVersion { Id = 30, Name = "Dream", ModelId = 14 },
+            new MotorcycleVersion { Id = 30, Name = "Biz ES", ModelId = 14 },
+            new MotorcycleVersion { Id = 32, Name = "Biz+", ModelId = 14 },
 
-            // NX 150
-            new MotorcycleVersion { ModelId = nx150Id },
+            new MotorcycleVersion { Id = 33, ModelId = 15 },
 
-            // CBX 150
-            new MotorcycleVersion { Alias = "Aero", ModelId = cbx150Id },
+            new MotorcycleVersion { Id = 34, Alias = "Strada", ModelId = 16 },
 
-            // NX 350
-            new MotorcycleVersion { Alias = "Sahara", ModelId = nx350Id },
+            new MotorcycleVersion { Id = 35, Alias = "XR 200R", ModelId = 17 },
 
-            // C100
-            new MotorcycleVersion { Name = "Dream", ModelId = c100Id },
-            new MotorcycleVersion { Name = "Biz ES", ModelId = c100Id },
-            new MotorcycleVersion { Name = "Biz+", ModelId = c100Id },
+            new MotorcycleVersion { Id = 36, ModelId = 18 },
 
-            // CBX 200
-            new MotorcycleVersion { Alias = "Strada", ModelId = cbx200Id },
+            new MotorcycleVersion { Id = 37, ModelId = 19 },
 
-            // XR 200
-            new MotorcycleVersion { Alias = "XR 200R", ModelId = xr200Id },
+            new MotorcycleVersion { Id = 38, Alias = "Falcon", ModelId = 20 },
 
-            // XLR 125
-            new MotorcycleVersion { ModelId = xlr125Id },
+            new MotorcycleVersion { Id = 39, Alias = "Twister", ModelId = 21 },
 
-            // CB 500
-            new MotorcycleVersion { ModelId = cb500Id },
+            new MotorcycleVersion { Id = 40, Alias = "Tornado", ModelId = 22 },
 
-            // NX 400
-            new MotorcycleVersion { Alias = "Falcon", ModelId = nx400Id },
+            new MotorcycleVersion { Id = 41, Alias = "Bros 125", ModelId = 23 },
 
-            // CBX 250
-            new MotorcycleVersion { Alias = "Twister", ModelId = cbx250Id },
+            new MotorcycleVersion { Id = 42, Alias = "Bros 150", ModelId = 24 },
 
-            // XR 250
-            new MotorcycleVersion { Alias = "Tornado", ModelId = xr250Id },
+            new MotorcycleVersion { Id = 43, Name = "Titan KS", ModelId = 25 },
+            new MotorcycleVersion { Id = 44, Name = "Titan ES", ModelId = 25 },
+            new MotorcycleVersion { Id = 45, Name = "Titan ESD", ModelId = 25 },
+            new MotorcycleVersion { Id = 46, Name = "Titan EX", ModelId = 25 },
+            new MotorcycleVersion { Id = 47, Name = "Sport", ModelId = 25 },
+            new MotorcycleVersion { Id = 48, Name = "Job", ModelId = 25 },
+            new MotorcycleVersion { Id = 49, Name = "Fan ESI", ModelId = 25 },
+            new MotorcycleVersion { Id = 50, Name = "Fan ESDI", ModelId = 25 },
+            new MotorcycleVersion { Id = 51, Name = "Cargo", ModelId = 25 },
+            new MotorcycleVersion { Id = 52, Name = "Titan Mix KS", ModelId = 25 },
+            new MotorcycleVersion { Id = 53, Name = "Titan Mix ES", ModelId = 25 },
+            new MotorcycleVersion { Id = 54, Name = "Titan Mix ESD", ModelId = 25 },
+            new MotorcycleVersion { Id = 55, Name = "Start", ModelId = 25 },
 
-            // NXR 125
-            new MotorcycleVersion { Alias = "Bros 125", ModelId = nxr125Id },
+            new MotorcycleVersion { Id = 56, Name = "KS", ModelId = 26 },
+            new MotorcycleVersion { Id = 57, Name = "ES", ModelId = 26 },
+            new MotorcycleVersion { Id = 58, Name = "EX", ModelId = 26 },
 
-            // CG 150
-            new MotorcycleVersion { Name = "Titan KS", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Titan ES", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Titan ESD", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Titan EX", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Sport", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Job", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Fan ESI", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Fan ESDI", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Cargo", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Titan Mix KS", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Titan Mix ES", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Titan Mix ESD", ModelId = cg150Id },
-            new MotorcycleVersion { Name = "Start", ModelId = cg150Id },
+            new MotorcycleVersion { Id = 59, ModelId = 27 },
+            
+            new MotorcycleVersion { Id = 60, ModelId = 28 },
 
-            // Biz 125
-            new MotorcycleVersion { Name = "KS", ModelId = biz125Id },
-            new MotorcycleVersion { Name = "ES", ModelId = biz125Id },
-            new MotorcycleVersion { Name = "EX", ModelId = biz125Id },
+            new MotorcycleVersion { Id = 61, ModelId = 29 },
 
-            // Pop 100
-            new MotorcycleVersion { ModelId = pop100Id }
+            new MotorcycleVersion { Id = 62, ModelId = 30 },
 
-            // NXR 150
-            new MotorcycleVersion { Alias = "Bros 150", ModelId = nxr150Id },
+            new MotorcycleVersion { Id = 63, ModelId = 31 },
 
-            // Biz 100
-            new MotorcycleVersion { ModelId = biz100Id }
+            new MotorcycleVersion { Id = 64, ModelId = 32 },
+
+            new MotorcycleVersion { Id = 65, ModelId = 33 },
+
+            new MotorcycleVersion { Id = 66, ModelId = 34 },
+            new MotorcycleVersion { Id = 67, Name = "Avant", ModelId = 34 },
+
+            new MotorcycleVersion { Id = 68, ModelId = 35 },
+            new MotorcycleVersion { Id = 69, Name = "Super", ModelId = 35 },
+            new MotorcycleVersion { Id = 70, Alias = "DTN 180", ModelId = 35 },
+            new MotorcycleVersion { Id = 71, Alias = "DTZ 180", ModelId = 35 },
+
+            new MotorcycleVersion { Id = 72, ModelId = 36 },
+            new MotorcycleVersion { Id = 73, Alias = "RDZ 125 II", ModelId = 36 },
+
+            new MotorcycleVersion { Id = 74, ModelId = 37 },
+            new MotorcycleVersion { Id = 75, Alias = "MX 180L" ModelId = 37 },
+
+            new MotorcycleVersion { Id = 76, ModelId = 38 },
         );
-
-        await context.SaveChangesAsync();
     }
 }

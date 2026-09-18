@@ -9,9 +9,9 @@ public class MotorcycleGroupConfiguration : IEntityTypeConfiguration<MotorcycleG
     {
         builder.ToTable("motorcycle_group");
 
-        builder.HasKey(e => e.Id);
+        builder.HasKey(x => x.Id);
 
-        builder.Property(e => e.Name)
+        builder.Property(x => x.Name)
             .IsRequired();
 
         builder.HasIndex(x => x.Name)
